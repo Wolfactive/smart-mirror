@@ -50,3 +50,24 @@ fetch(apiUrl)
             newsShowHeader.innerHTML= content;
         })
 // Call Api to show header
+// Speech function 
+if (annyang) {
+  // Let's define a command.
+    const commands = {
+        'music on': () => {
+            var contentShow = document.querySelector('#PostCategory');
+            contentShow.innerHTML = `<iframe width="50%" height="300" id="soundCloud" style="margin: 0 auto; display:block" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/75666326&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"></div>`;
+        },
+        'music off': () => {
+            var contentShow = document.querySelector('#PostCategory');
+            contentShow.innerHTML = ``;
+        }
+    };
+
+    // Add our commands to annyang
+    annyang.addCommands(commands);
+
+    // Start listening.
+    annyang.start();
+}
+// Speech function 

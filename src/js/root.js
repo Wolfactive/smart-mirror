@@ -1,4 +1,5 @@
 import LazyLoad from "vanilla-lazyload";
+import './main/speech';
 import './main/global';
 import './main/footer';
 
