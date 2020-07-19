@@ -19,7 +19,7 @@ const PRODUCTION = yargs.argv.prod;
 const server = browserSync.create();
 export const serve = done => {
   server.init({
-    proxy: "http://smart-mirror" // put your local website link here
+    proxy: "http://localhost/smart-mirror" // put your local website link here
   });
   done();
 };
