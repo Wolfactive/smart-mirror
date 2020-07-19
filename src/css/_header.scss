@@ -5,6 +5,7 @@
         max-width: 90%;
         margin: 20px auto;
         #clockbox{
+            max-width: 40%;
             text-align:center;
             color:#fff;
             font-weight:600;
@@ -13,5 +14,34 @@
             }
         }
     }
-    
+    &__clock{        
+        flex: 0 0 40%;        
+        max-width: 40%;
+        align-self: center;
+    }
+    &__news{
+        display:flex;
+        justify-content: space-around;
+        flex: 0 0 60%;
+        max-width: 60%;
+        .post__item{
+            flex: 0 0 33.333%;
+            max-width: 33%;
+            .post__item-img{
+                width: 280px;
+                height: 125px;
+                overflow: hidden;
+                img{
+                    object-fit: cover;
+                    vertical-align: middle;
+                }
+            }
+            .post__item-title{
+                color: #fff;
+                width: 280px;
+                text-align:center;
+                margin-top: 10px;
+            }
+        }
+    }
 }

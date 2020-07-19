@@ -1,4 +1,6 @@
-
+var protocol = window.location.protocol;
+var hostname = window.location.hostname;
+// show clock 
     tday=new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
     tmonth=new Array("January","February","March","April","May","June","July","August","September","October","November","December");
     
@@ -24,4 +26,27 @@
     GetClock();
     setInterval(GetClock,1000);
     }
-    
+// show clock 
+
+// Call Api to show header
+let apiUrl = `https://wolfactive.dev/wp-json/blog-api/v1/blog/offset=1&category=web-development`;
+let newsShowHeader = document.querySelector('.header__news');
+fetch(apiUrl)
+        .then(response => response.json())
+        .then(data =>{
+            let content = ``;
+            data.forEach((item,index)=>{
+                if(index < 3){
+                    content += `<a href="${item.url}" class="post__item d--block">
+                                <div class="post__item-img">
+                                    ${item.thumbnail}
+                                </div>
+                                <div class="post__item-title">
+                                    ${item.title}
+                                </div>
+                            </a>`;
+                }
+            })
+            newsShowHeader.innerHTML= content;
+        })
+// Call Api to show header

@@ -1,11 +1,11 @@
 import LazyLoad from "vanilla-lazyload";
 import './main/global';
+import './main/footer';
+
 /*VARIABLES*/
 var iframe = document.querySelectorAll('iframe');
 var img = document.querySelectorAll('img');
 var video = document.querySelectorAll('video');
-var protocol = window.location.protocol;
-var hostname = window.location.hostname;
 /*VARIABLES*/
 /*Local Storage*/
 function LuuVaoLocalStorage(Array,nameArray) {
