@@ -1,0 +1,39 @@
+{
+  "name": "wordpress-gulp-webpack-theme",
+  "version": "2.0.0",
+  "description": "This is base theme wordpress of wolfactive. It includes webpack, gulp,...",
+  "main": "index.js",
+  "scripts": {
+    "start": "gulp",
+    "build": "gulp build --prod"
+  },
+  "author": "Huy Nguyen and Phuong Nam - Wolfactive",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.10.2",
+    "@babel/preset-env": "^7.10.2",
+    "@babel/register": "^7.10.1",
+    "autoprefixer": "^9.8.0",
+    "babel-loader": "^8.1.0",
+    "browser-sync": "^2.26.7",
+    "del": "^5.1.0",
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-if": "^3.0.0",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-postcss": "^8.0.0",
+    "gulp-replace": "^1.0.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-uglify": "^3.0.2",
+    "gulp-wp-pot": "^2.4.3",
+    "gulp-zip": "^5.0.1",
+    "webpack-stream": "^5.2.1",
+    "yargs": "^15.3.1"
+  },
+  "dependencies": {
+    "@splidejs/splide": "^2.3.8",
+    "js-cookie": "^2.2.1",
+    "vanilla-lazyload": "^16.1.0"
+  }
+}
