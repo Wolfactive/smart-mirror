@@ -1,6 +1,5 @@
 import LazyLoad from "vanilla-lazyload";
-import Splide from '@splidejs/splide';
-import Cookies from 'js-cookie';
+import './main/global';
 /*VARIABLES*/
 var iframe = document.querySelectorAll('iframe');
 var img = document.querySelectorAll('img');
