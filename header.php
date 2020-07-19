@@ -16,36 +16,5 @@
 </head>
 <body <?php body_class(); ?>>
 <section class="header">
-  <div class="main--background">
-    <div class="header__contain container">
-  	   <div class="header__item">
-  	      <a href="<?php echo site_url(); ?>" class="d--block logo mr-auto">
-            <?php
-             $custom_logo_id = get_theme_mod( 'custom_logo' );
-             $image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
-                ?>
-  	        <img src="<?php echo $image[0]; ?>" alt="logo-nha-pho-sai-gon">
-  	      </a>
-  	   </div>
-  	   <div class="header__item dp--none">
-  	      <?php
-  	       wp_nav_menu(array(
-  		    'theme_location' => 'headerMenuLocation' ));
-  	      ?>
-  	   </div>
-  	   <div class="header__item d--none dp--block">
-  	      <button class="btn text--light" id="navBtn" aria-label="btn-navbar">
-  	          <i class="fas fa-bars icon--text"></i>
-  	      </button>
-  	   </div>
-  	</div>
-  </div>
-    <div class="main--background" id="headerNavBar">
-     <div class="container navbar__mb">
-       <?php
-       wp_nav_menu(array(
-      'theme_location' => 'headerMenuLocation' ));
-      ?>
-    </div>
-  </div>
+  
 </section>
