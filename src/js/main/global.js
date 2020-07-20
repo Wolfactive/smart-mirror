@@ -103,7 +103,11 @@ if (annyang) {
         butttonReload.onclick = () =>{
             location.reload();
         }
-        }
+        },
+        'hide navbar': () => {
+            var footerBtn = document.querySelector('.footer__btn');
+            footerBtn.innerHTML = ``;
+        },
     };
 
     // Add our commands to annyang
