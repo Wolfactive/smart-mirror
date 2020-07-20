@@ -70,7 +70,7 @@ if (annyang) {
             var string = annyang.getSpeechRecognizer();
             console.log(string);
         },
-        'show navbar': () => {
+        'show menu': () => {
             var footerBtn = document.querySelector('.footer__btn');
             footerBtn.innerHTML = ` <div class="row-divide">
             <div class="col-divide-3 text--center">
@@ -104,7 +104,7 @@ if (annyang) {
             location.reload();
         }
         },
-        'hide navbar': () => {
+        'hide menu': () => {
             var footerBtn = document.querySelector('.footer__btn');
             footerBtn.innerHTML = ``;
         },
