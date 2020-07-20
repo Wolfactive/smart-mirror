@@ -70,7 +70,7 @@ if (annyang) {
             var string = annyang.getSpeechRecognizer();
             console.log(string);
         },
-        'show menu': () => {
+        'menu on': () => {
             var footerBtn = document.querySelector('.footer__btn');
             footerBtn.innerHTML = ` <div class="row-divide">
             <div class="col-divide-3 text--center">
@@ -96,6 +96,7 @@ if (annyang) {
         </div>`;
         var buttonMusic = document.querySelector('button[aria-label="music-on"]');
         var butttonReload = document.querySelector('button[aria-label="refesh-mirror"]');
+        var butttonEvent = document.querySelector('button[aria-label="event-on"]');
         var contentShow = document.querySelector('#PostCategory');
         buttonMusic.onclick = () =>{
             contentShow.innerHTML = `<iframe width="50%" height="300" id="soundCloud" style="margin: 0 auto; display:block" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/75666326&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"></div>`;
@@ -103,10 +104,23 @@ if (annyang) {
         butttonReload.onclick = () =>{
             location.reload();
         }
+        butttonEvent.onclick = () =>{               
+            var eventShow = document.querySelector('#event');
+            eventShow.innerHTML = `<h1 class="text--center" >Lịch trình hôm nay</h1>
+            <ul>
+              <li class="text--light title--item">Sáng đi học</li>
+              <li class="text--light title--item">Chiều đi ngủ</li>
+              <li class="text--light title--item"> Tối đi Chơi</li>
+            </ul>`;
+        }
         },
-        'hide menu': () => {
+        'menu off': () => {
             var footerBtn = document.querySelector('.footer__btn');
             footerBtn.innerHTML = ``;
+        },
+        'event off': () => {            
+            var eventShow = document.querySelector('#event');
+            eventShow.innerHTML = ``;
         },
     };
 
