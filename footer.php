@@ -1,4 +1,28 @@
 <section class="footer"> 
+    <div class="footer__btn" style="max-width:300px; margin: 0 auto">
+        <div class="row-divide">
+            <div class="col-divide-3 text--center">
+                <button class="btn" aria-label="music-on">
+                    <i class="fas fa-music icon text--light"></i>
+                </button>
+            </div>
+            <div class="col-divide-3 text--center">
+                <button class="btn" aria-label="event-on">
+                    <i class="fas fa-calendar icon text--light"></i>
+                </button>
+            </div>
+            <div class="col-divide-3 text--center">
+                <button class="btn" aria-label="refesh-mirror">
+                    <i class="fas fa-sync icon text--light"></i>
+                </button>
+            </div>
+            <div class="col-divide-3 text--center">
+                <button class="btn" aria-label="marcus-setting">
+                    <i class="fas fa-cog icon text--light"></i>
+                </button>
+            </div>
+        </div>
+    </div>
     <div class="carousel__item-slider">
         <div class="content_smart_one">
             <h3 class="mc_style_title-footer">Trò cưng David Moyes khiến MU, Real thèm muốn: Sao mai 70 triệu bảng là ai?</h3>

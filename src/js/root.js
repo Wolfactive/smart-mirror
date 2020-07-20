@@ -1,8 +1,7 @@
 import LazyLoad from "vanilla-lazyload";
 import './main/speech';
-import './main/global';
 import './main/footer';
-
+import './main/global';
 /*VARIABLES*/
 var iframe = document.querySelectorAll('iframe');
 var img = document.querySelectorAll('img');
