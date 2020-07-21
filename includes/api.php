@@ -52,5 +52,5 @@ function voiceRegisterApiSearch(){
 function voiceApiSearchResult($data){	
 	$voiceResult = array();
 	$voiceResult[] = get_field('voice_command','option');
-	return $voiceResult;
+	mirror_return_json($voiceResult);
 }
