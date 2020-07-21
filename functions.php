@@ -12,7 +12,7 @@ define('THEME_URL', get_stylesheet_directory_uri());
 $file_includes = [
     'includes/theme-setup.php',                         // General theme setting
     'includes/acf-options.php',                         // ACF Option page
-    'includes/resize.php',
+    'includes/api.php',
 ];
 
 foreach ($file_includes as $file) {

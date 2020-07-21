@@ -122,6 +122,50 @@ if (annyang) {
             var eventShow = document.querySelector('#event');
             eventShow.innerHTML = ``;
         },
+        'turn on': () => {            
+            let apiUrlMail = ``;
+            if(protocol === "http:" && hostname === "localhost"){
+                apiUrlMail =`${protocol}//${hostname}/smart-mirror/wp-json/mirror-api/v1/submit-voice`;
+            }else if (protocol === "http:" || protocol === "https:") {
+                apiUrlMail =`${protocol}//${hostname}/wp-json/mirror-api/v1/submit-voice`;
+            }
+            fetch(apiUrlMail,{
+                method: 'POST',
+                mode:    'cors',
+                headers: {
+                'Content-Type': 'application/json',  // sent request
+                'Accept':       'application/json'   // expected data sent back
+                },
+                body: JSON.stringify({'email': emailFooter.value})
+            })
+            .then(response => response.json())
+            .then(data => {
+                var contentShow = document.querySelector('#PostCategory');
+                contentShow.innerHTML = `Turn on`;
+            })            
+        },
+        'turn off': () => {            
+            let apiUrlMail = ``;
+            if(protocol === "http:" && hostname === "localhost"){
+                apiUrlMail =`${protocol}//${hostname}/smart-mirror/wp-json/mirror-api/v1/submit-voice`;
+            }else if (protocol === "http:" || protocol === "https:") {
+                apiUrlMail =`${protocol}//${hostname}/wp-json/mirror-api/v1/submit-voice`;
+            }
+            fetch(apiUrlMail,{
+                method: 'POST',
+                mode:    'cors',
+                headers: {
+                'Content-Type': 'application/json',  // sent request
+                'Accept':       'application/json'   // expected data sent back
+                },
+                body: JSON.stringify({'email': emailFooter.value})
+            })
+            .then(response => response.json())
+            .then(data => {
+                var contentShow = document.querySelector('#PostCategory');
+                contentShow.innerHTML = `Turn off`;
+            })     
+        },
     };
 
     // Add our commands to annyang
