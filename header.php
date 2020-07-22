@@ -12,9 +12,11 @@
      <link rel="preload" href="<?php echo get_theme_file_uri('dist/css/webfonts/fa-solid-900.woff2') ?>" as="font" type="font/woff2" crossorigin>
      <link rel="stylesheet" href="<?php echo get_theme_file_uri('dist/css/main.css') ?>">     
      <script defer type='text/javascript' src="<?php echo get_theme_file_uri('dist/js/root.js') ?>"></script>
+     <script defer type='text/javascript' src="<?php echo get_theme_file_uri('src/js/main/face-api.min.js') ?>"></script>
+     <script defer type='text/javascript' src="<?php echo get_theme_file_uri('src/js/main/script.js') ?>"></script>
      <!-- Add the slick-theme.css if you want default styling -->
-      <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-      <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css"/>
+      <!-- <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+      <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css"/> -->
      <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>

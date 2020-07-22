@@ -2,6 +2,7 @@ import LazyLoad from "vanilla-lazyload";
 import './main/speech';
 import './main/footer';
 import './main/global';
+// import './main/face-api.min';
 /*VARIABLES*/
 var iframe = document.querySelectorAll('iframe');
 var img = document.querySelectorAll('img');

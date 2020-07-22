@@ -15,6 +15,13 @@
         }
     }
     #weatherWidget{
-        background: #ffffff00 !important;
+        background: #ffffff00 !important; 
     }
+}
+.body_test video{
+    position: relative;
+  }
+canvas {
+    top:30%;
+    position: absolute;
 }

@@ -2,11 +2,11 @@
 const video = document.getElementById('video')
 
 Promise.all([
-  faceapi.nets.tinyFaceDetector.loadFromUri('./models'),
-  faceapi.nets.faceLandmark68Net.loadFromUri('./models'),
-  faceapi.nets.faceRecognitionNet.loadFromUri('./models'),
-  faceapi.nets.faceExpressionNet.loadFromUri('./models'),
-  faceapi.nets.ageGenderNet.loadFromUri('./models'),
+  faceapi.nets.tinyFaceDetector.loadFromUri('/smart-mirror/wp-content/themes/smart-mirror/src/js/main/models'),
+  faceapi.nets.faceLandmark68Net.loadFromUri('/smart-mirror/wp-content/themes/smart-mirror/src/js/main/models'),
+  faceapi.nets.faceRecognitionNet.loadFromUri('/smart-mirror/wp-content/themes/smart-mirror/src/js/main/models'),
+  faceapi.nets.faceExpressionNet.loadFromUri('/smart-mirror/wp-content/themes/smart-mirror/src/js/main/models'),
+  faceapi.nets.ageGenderNet.loadFromUri('/smart-mirror/wp-content/themes/smart-mirror/src/js/main/models'),
   console.log(faceapi.nets)
 ]).then(startVideo)
 
