@@ -1,14 +1,26 @@
 
 const video = document.getElementById('video')
-
-Promise.all([
-  faceapi.nets.tinyFaceDetector.loadFromUri('/smart-mirror/wp-content/themes/smart-mirror/src/js/main/models'),
-  faceapi.nets.faceLandmark68Net.loadFromUri('/smart-mirror/wp-content/themes/smart-mirror/src/js/main/models'),
-  faceapi.nets.faceRecognitionNet.loadFromUri('/smart-mirror/wp-content/themes/smart-mirror/src/js/main/models'),
-  faceapi.nets.faceExpressionNet.loadFromUri('/smart-mirror/wp-content/themes/smart-mirror/src/js/main/models'),
-  faceapi.nets.ageGenderNet.loadFromUri('/smart-mirror/wp-content/themes/smart-mirror/src/js/main/models'),
-  console.log(faceapi.nets)
-]).then(startVideo)
+let protocol = window.location.protocol;
+let hostname = window.location.hostname;
+if(protocol === "http:" && hostname === "localhost"){
+  Promise.all([
+    faceapi.nets.tinyFaceDetector.loadFromUri('/smart-mirror/wp-content/themes/smart-mirror/src/js/main/models'),
+    faceapi.nets.faceLandmark68Net.loadFromUri('/smart-mirror/wp-content/themes/smart-mirror/src/js/main/models'),
+    faceapi.nets.faceRecognitionNet.loadFromUri('/smart-mirror/wp-content/themes/smart-mirror/src/js/main/models'),
+    faceapi.nets.faceExpressionNet.loadFromUri('/smart-mirror/wp-content/themes/smart-mirror/src/js/main/models'),
+    faceapi.nets.ageGenderNet.loadFromUri('/smart-mirror/wp-content/themes/smart-mirror/src/js/main/models'),
+    console.log(faceapi.nets)
+  ]).then(startVideo)
+}else if (protocol === "http:" || protocol === "https:") {
+  Promise.all([
+    faceapi.nets.tinyFaceDetector.loadFromUri('/wp-content/themes/smart-mirror/src/js/main/models'),
+    faceapi.nets.faceLandmark68Net.loadFromUri('/wp-content/themes/smart-mirror/src/js/main/models'),
+    faceapi.nets.faceRecognitionNet.loadFromUri('/wp-content/themes/smart-mirror/src/js/main/models'),
+    faceapi.nets.faceExpressionNet.loadFromUri('/wp-content/themes/smart-mirror/src/js/main/models'),
+    faceapi.nets.ageGenderNet.loadFromUri('/wp-content/themes/smart-mirror/src/js/main/models'),
+    console.log(faceapi.nets)
+  ]).then(startVideo)
+}
 
 function startVideo() {
   navigator.getUserMedia(
