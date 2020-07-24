@@ -18,13 +18,6 @@
         background: #ffffff00 !important; 
     }
 }
-.body_test video{
-    position: relative;
-  }
-canvas {
-    top:30%;
-    position: absolute;
-}
 @media only screen and (min-width: 700px) and (max-width: 1366px){
     .header .container--fix #clockbox{
         max-width: 80%;
@@ -48,14 +41,14 @@ canvas {
         margin-bottom: 25px;
     }
     #PostCategory{
-        position: relative;
+        margin-top: 30px;
     }
-    #event{
-        width: 90%;
-        margin: 0 auto;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
+    // #event{
+    //     width: 90%;
+    //     margin: 0 auto;
+    //     position: absolute;
+    //     top: 50%;
+    //     left: 50%;
+    //     transform: translate(-50%, -50%);
+    // }
 }
