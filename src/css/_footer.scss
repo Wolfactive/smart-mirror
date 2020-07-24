@@ -25,3 +25,37 @@ canvas {
     top:30%;
     position: absolute;
 }
+@media only screen and (min-width: 700px) and (max-width: 1366px){
+    .header .container--fix #clockbox{
+        max-width: 80%;
+    }
+    .header__news .post__item .post__item-title{
+        width: 120px;
+        font-size: 9px;
+        text-align: justify;
+    }
+    .header__news .post__item .post__item-img{
+        width: 120px;
+        height: 53px;
+    }
+    .footer .content_smart_one .mc_style_title-footer{
+        font-size: 25px;
+    }
+    .footer .content_smart_one .mc_content{
+        font-size: 12px;
+    }
+    .mc_weather_footer{
+        margin-bottom: 25px;
+    }
+    #PostCategory{
+        position: relative;
+    }
+    #event{
+        width: 90%;
+        margin: 0 auto;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
