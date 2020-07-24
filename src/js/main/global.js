@@ -37,7 +37,7 @@ fetch(apiUrl)
             let content = ``;
             data.forEach((item,index)=>{
                 if(index < 3){
-                    content += `<a href="${item.url}" class="post__item d--block">
+                    content += `<a href="javascript:void(0)" class="post__item d--block">
                                 <div class="post__item-img">
                                     ${item.thumbnail}
                                 </div>
@@ -57,12 +57,21 @@ if (annyang) {
         'hello': () => {
             var contentShow = document.querySelector('#PostCategory');
             contentShow.innerHTML = `<h1 class="title--section text--center"> HELLO!!!</h1>`;
+            console.log('11111');
         },
         'music on': () => {
             var contentShow = document.querySelector('#PostCategory');
-            contentShow.innerHTML = `<iframe width="80%" height="300" id="soundCloud" style="margin: 0 auto; display:block" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/75666326&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"></div>`;
+            contentShow.innerHTML = `<div class="bounce-in-top"><iframe width="80%" height="300" id="soundCloud" style="margin: 0 auto; display:block" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/75666326&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"></div></div>`;
         },
         'music off': () => {
+            var contentShow = document.querySelector('#PostCategory');
+            contentShow.innerHTML = ``;
+        },
+        'open video': () => {
+            var contentShow = document.querySelector('#PostCategory');
+            contentShow.innerHTML = `<div class="bounce-in-top"> <iframe style="margin-top:20px;margin:0 auto;display:block;" width="560" height="315" src="https://www.youtube.com/embed/T0sHaz4H9MQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`;
+        },
+        'off video': () => {
             var contentShow = document.querySelector('#PostCategory');
             contentShow.innerHTML = ``;
         },
@@ -71,34 +80,37 @@ if (annyang) {
             console.log(string);
         },
         'menu on': () => {
+            console.log('11111');
+            var string = annyang.getSpeechRecognizer();
+            console.log(string);
             var footerBtn = document.querySelector('.footer__btn');
             footerBtn.innerHTML = ` <div class="row-divide">
-            <div class="col-divide-2 text--center">
+            <div class="col-divide-2 text--center slide-in-top">
                 <button class="btn" aria-label="music-on">
                     <i class="fas fa-music icon text--light"></i>
                 </button>
             </div>
-            <div class="col-divide-2 text--center">
+            <div class="col-divide-2 text--center slide-in-top">
                 <button class="btn" aria-label="event-on">
                     <i class="fas fa-calendar icon text--light"></i>
                 </button>
             </div>
-            <div class="col-divide-2 text--center">
+            <div class="col-divide-2 text--center slide-in-top">
                 <button class="btn" aria-label="refesh-mirror">
                     <i class="fas fa-sync icon text--light"></i>
                 </button>
             </div>
-            <div class="col-divide-2 text--center">
+            <div class="col-divide-2 text--center slide-in-top">
                 <button class="btn" aria-label="marcus-setting">
                     <i class="fas fa-cog icon text--light"></i>
                 </button>
             </div>
-            <div class="col-divide-2 text--center">
+            <div class="col-divide-2 text--center slide-in-top">
                 <button class="btn" aria-label="video-on">
                     <i class="fab fa-youtube icon text--light"></i>
                 </button>
             </div>
-            <div class="col-divide-2 text--center">
+            <div class="col-divide-2 text--center slide-in-top">
                 <button class="btn" aria-label="image-on">
                     <i class="fas fa-newspaper icon text--light"></i>
                 </button>
@@ -156,15 +168,15 @@ if (annyang) {
             </div>`;
         }
         },
-        'menu off': () => {
+        'close menu': () => {
             var footerBtn = document.querySelector('.footer__btn');
             footerBtn.innerHTML = ``;
         },
-        'event off': () => {            
+        'close event': () => {            
             var eventShow = document.querySelector('#event');
             eventShow.innerHTML = ``;
         },
-        'image off': () => {            
+        'picture off': () => {            
             var eventShow = document.querySelector('#event');
             eventShow.innerHTML = ``;
         },
