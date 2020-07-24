@@ -1,5 +1,5 @@
 <section class="footer"> 
-    <div class="footer__btn" style="max-width:300px; margin: 0 auto">       
+    <div class="footer__btn" style="max-width:400px; margin: 0 auto; margin-bottom: 15px">     
     </div>
     <div class="carousel__item-slider">
         <div class="content_smart_one">
