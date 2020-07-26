@@ -1,5 +1,11 @@
 var protocol = window.location.protocol;
 var hostname = window.location.hostname;
+var urlIMages = ``;
+if(protocol === "http:" && hostname === "localhost"){
+    urlIMages =`${protocol}//${hostname}/smart-mirror/wp-content/themes/smart-mirror/dist/images/`;
+}else if (protocol === "http:" || protocol === "https:") {
+    apiUrlMail =`${protocol}//${hostname}/wp-content/themes/smart-mirror/dist/images/`;
+}
 // show clock 
     tday=new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
     tmonth=new Array("January","February","March","April","May","June","July","August","September","October","November","December");
@@ -56,8 +62,10 @@ if (annyang) {
     const commands = {
         'hello': () => {
             var contentShow = document.querySelector('#PostCategory');
-            contentShow.innerHTML = `<h1 class="title--section text--center"> HELLO!!!</h1>`;
-            console.log('11111');
+            contentShow.innerHTML = `<div class="text--center"><img style="width: 400px" src="${urlIMages}giphy.webp" alt="hello-word" ></div>`;
+            setTimeout(() => {
+                contentShow.innerHTML =`<div id="event" style="max-width:500px; margin: 0 auto;">`;
+            },5000)
         },
         'music on': () => {
             var contentShow = document.querySelector('#PostCategory');
@@ -65,7 +73,7 @@ if (annyang) {
         },
         'music off': () => {
             var contentShow = document.querySelector('#PostCategory');
-            contentShow.innerHTML = ``;
+            contentShow.innerHTML = `<div id="event" style="max-width:500px; margin: 0 auto;">`;
         },
         'open video': () => {
             var contentShow = document.querySelector('#PostCategory');
@@ -73,14 +81,13 @@ if (annyang) {
         },
         'off video': () => {
             var contentShow = document.querySelector('#PostCategory');
-            contentShow.innerHTML = ``;
+                contentShow.innerHTML =`<div id="event" style="max-width:500px; margin: 0 auto;">`;
         },
         'Ok': () => {
             var string = annyang.getSpeechRecognizer();
             console.log(string);
         },
         'menu on': () => {
-            console.log('11111');
             var string = annyang.getSpeechRecognizer();
             console.log(string);
             var footerBtn = document.querySelector('.footer__btn');
@@ -194,7 +201,7 @@ if (annyang) {
                 'Content-Type': 'application/json',  // sent request
                 'Accept':       'application/json'   // expected data sent back
                 },
-                body: JSON.stringify({'email': emailFooter.value})
+                body: JSON.stringify({'command': "Turn off"})
             })
             .then(response => response.json())
             .then(data => {
@@ -216,12 +223,16 @@ if (annyang) {
                 'Content-Type': 'application/json',  // sent request
                 'Accept':       'application/json'   // expected data sent back
                 },
-                body: JSON.stringify({'email': emailFooter.value})
+                body: JSON.stringify({'command': "Turn off"})
             })
             .then(response => response.json())
             .then(data => {
                 var contentShow = document.querySelector('#PostCategory');
                 contentShow.innerHTML = `Turn off`;
+                return contentShow;
+            })
+            .then((contentShow)=>{
+                setTimeout(()=>{contentShow.innerHTML = ``;},3000)
             })     
         },
     };
