@@ -4,7 +4,7 @@ var urlIMages = ``;
 if(protocol === "http:" && hostname === "localhost"){
     urlIMages =`${protocol}//${hostname}/smart-mirror/wp-content/themes/smart-mirror/dist/images/`;
 }else if (protocol === "http:" || protocol === "https:") {
-    apiUrlMail =`${protocol}//${hostname}/wp-content/themes/smart-mirror/dist/images/`;
+    urlIMages =`${protocol}//${hostname}/wp-content/themes/smart-mirror/dist/images/`;
 }
 // show clock 
     tday=new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
